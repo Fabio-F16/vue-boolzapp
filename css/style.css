@@ -1,0 +1,53 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+[class*="col"]{
+    border: 1px solid black;
+    
+}
+
+/* div{
+    border: 1px solid black;
+} */
+
+.box-left img{
+    width: 50px;
+
+}
+
+.box-left{
+    padding: 10px;
+}
+
+.user{
+    line-height: 50px;
+    vertical-align: middle;
+    background-color: lightgrey;
+}
+
+.notify{
+    background-color: #8edafc;
+}
+.user, .notify{
+    padding: 10px;
+}
+
+.notify i{
+    font-size:1.3rem;
+    background-color: lightgrey;
+    padding: 0px 10px;
+    line-height: 50px;
+    vertical-align: middle;
+}
+
+#contactsList span{
+    font-size: 0.7rem;
+}
+
+.contact{
+    padding: 10px;
+    border-bottom: 1px solid lightgrey;
+}
