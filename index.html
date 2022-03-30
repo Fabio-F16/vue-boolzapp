@@ -76,8 +76,7 @@
 
                         <div @click="setContactClicked(index)" class="d-flex">
 
-                            <img :src="'img/avatar' + contact.avatar + '.jpg'" class=" rounded-circle"
-                                :alt="contact.name" />
+                            <img :src="getImgAvatar(contact.avatar)" class="rounded-circle" :alt="contact.name" />
 
                             <div>
                                 <div>{{contact.name}}</div>

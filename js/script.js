@@ -12,10 +12,16 @@ const app = new Vue({
 
     },
     methods: {
+
+        getImgAvatar(valore) {
+            return 'img/avatar' + valore + '.jpg'
+        },
+
         setContactClicked(i) {
             this.contactClicked = i;
             // console.log('click');
         },
+
         typeOfMessage(status) {
             if (status === 'sent') {
                 return 'send'
@@ -23,6 +29,7 @@ const app = new Vue({
                 return 'received'
             }
         },
+
         sendMessage() {
             const newMessageToSend = {
                 date: '',
