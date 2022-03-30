@@ -6,28 +6,28 @@
 body{
     font-family: 'Roboto', sans-serif;
 }
-[class*="col"]{
+/* [class*="col"]{
     border: 1px solid black;
     
-}
+} */
 
 /* div{
     border: 1px solid black;
 } */
 
-.box-left img{
+.box-left img, .box-right img{
     width: 50px;
 
 }
 
-/* .box-left{
-    padding: 10px;
-} */
+.box-left, .box-right{
+   height: 100vh;
+}
 
-.user{
+.user, .send-message{
     line-height: 50px;
     vertical-align: middle;
-    background-color: lightgrey;
+    background-color:#eaeaea;
 }
 
 .notify{
@@ -39,7 +39,7 @@ body{
 
 .notify i{
     font-size:1.3rem;
-    background-color: lightgrey;
+    background-color: #f2fbff;
     padding: 0px 10px;
     line-height: 50px;
     vertical-align: middle;
@@ -50,6 +50,7 @@ body{
 }
 #contactsList{
     overflow-y: scroll;
+    
 }
 
 .contact{
@@ -60,3 +61,31 @@ body{
 .contact img{
     margin-right: 15px;
 }
+
+.box-right{
+    background-image: url(../img/mine.jpg);
+}
+
+.send-message{
+    position: relative;
+    top:580px;
+    
+}
+.message{
+    width: 200px;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 10px 50px;
+}
+
+
+.send{
+    align-self: flex-end;
+    background-color: #d5f9ba;
+}
+
+.received{
+    align-self: flex-start;
+    background-color: #ffffff;
+}
+

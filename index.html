@@ -29,6 +29,7 @@
             <!-- inizio box left -->
             <div class="box-left col-4 ">
 
+                <!-- inizio utente -->
                 <div class="user d-flex justify-content-between">
 
                     <div class="d-flex align-text-bottom">
@@ -43,7 +44,10 @@
                     </div>
 
                 </div>
+                <!-- fine utente -->
 
+
+                <!-- inizio notifiche -->
                 <div class="d-flex notify">
 
                     <i class="rounded-circle fa-solid fa-bell-slash"></i>
@@ -55,15 +59,22 @@
                     </div>
 
                 </div>
+                <!-- fine notifiche -->
 
+
+                <!-- inizio input -->
                 <input class="col-12" type="text">
+                <!-- fine input -->
 
+                <!-- inizio lista contatti -->
                 <div id="contactsList" class="d-flex flex-column">
 
                     <div class="contact d-flex justify-content-between" v-for="(contact, index) in contacts">
-                        <div class="d-flex">
 
-                            <img :src="'img/avatar' + contact.avatar + '.jpg'" class=" rounded-circle" alt="" />
+                        <div @click="setContactClicked(index)" class="d-flex">
+
+                            <img :src="'img/avatar' + contact.avatar + '.jpg'" class=" rounded-circle"
+                                :alt="contact.name" />
 
                             <div>
                                 <div>{{contact.name}}</div>
@@ -77,6 +88,7 @@
                     </div>
 
                 </div>
+                <!-- inizio lista contatti -->
 
             </div>
             <!-- fine box left -->
@@ -85,32 +97,69 @@
             <!-- inizio chat box right -->
             <div class="box-right col-8">
 
-                <div class="col-12">
+                <div class="d-flex flex-column col-12">
+
+                    <!-- Inizio contatto selezionato -->
+                    <div class="user d-flex justify-content-between">
+
+                        <div v-if="contactClicked !== undefined" class="d-flex">
+
+                            <img :src="'img/avatar' + contacts[contactClicked].avatar + '.jpg'" class=" rounded-circle">
+                            <span>{{contacts[contactClicked].name}}</span> <br>
+
+                        </div>
+
+                        <div>
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <i class="fa-solid fa-paperclip"></i>
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+
+                    </div>
+                    <!-- fine contatto selezionato -->
+
+                    <!-- Inizio chat con contatto selezionato-->
+                    <div v-if="contactClicked !== undefined" id="chat" class="d-flex flex-column">
+
+                        <div v-for="message in contacts[contactClicked].messages"
+                            :class="[typeOfMessage(message.status),'message']">
+                            {{message.message}}
+                        </div>
+                    </div>
+                    <!-- fine chat con contatto selezionato-->
+
+                    <!-- Inizio invio messaggio -->
+                    <div class="send-message d-flex text-center">
+
+                        <div class="col-2">
+
+                            <i class="fa-solid fa-face-smile"></i>
+
+                        </div>
+
+                        <div class="col-8">
+
+                            <input v-model="newMessage" @keyUp.enter="sendMessage" class="input-message col-12"
+                                type="text" placeholder="Scrivi un messaggio">
+
+                        </div>
+
+                        <div class="col-2">
+
+                            <i class="fa-solid fa-microphone"></i>
+                        </div>
+
+                    </div>
+                    <!-- fine invio messaggio -->
 
                 </div>
 
             </div>
             <!-- fine chat box right -->
 
-
-
-
-
-
-
-
-
-
         </div>
 
     </div>
-
-
-
-
-
-
-
 
     <script src="js/data.js"></script>
     <script src="js/script.js"></script>
