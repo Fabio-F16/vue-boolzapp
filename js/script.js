@@ -14,7 +14,7 @@ const app = new Vue({
     methods: {
         setContactClicked(i) {
             this.contactClicked = i;
-            console.log('click');
+            // console.log('click');
         },
         typeOfMessage(status) {
             if (status === 'sent') {
@@ -34,6 +34,19 @@ const app = new Vue({
             this.contacts[this.contactClicked].messages.push(newMessageToSend);
 
             this.newMessage = '';
+
+            setTimeout(() => {
+
+                const newMessageReceived = {
+                    date: '',
+                    message: '',
+                    status: 'received'
+                };
+
+                newMessageReceived.message = 'I love you';
+                this.contacts[this.contactClicked].messages.push(newMessageReceived);
+
+            }, 1000)
         }
     }
 

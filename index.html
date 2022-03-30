@@ -32,7 +32,7 @@
                 <!-- inizio utente -->
                 <div class="user d-flex justify-content-between">
 
-                    <div class="d-flex align-text-bottom">
+                    <div>
                         <img class="rounded-circle" src="img/avatar_io.jpg" alt="">
                         <span>Sofia</span>
                     </div>
@@ -63,7 +63,10 @@
 
 
                 <!-- inizio input -->
-                <input class="col-12" type="text">
+                <div class="search-input d-flex justify-content-center">
+                    <button class="col-2"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <input class="col-9" type="text">
+                </div>
                 <!-- fine input -->
 
                 <!-- inizio lista contatti -->
@@ -94,19 +97,17 @@
             <!-- fine box left -->
 
 
-            <!-- inizio chat box right -->
-            <div class="box-right col-8">
+            <!-- inizio box right -->
+            <div class="box-right d-flex col-8">
 
                 <div class="d-flex flex-column col-12">
 
                     <!-- Inizio contatto selezionato -->
-                    <div class="user d-flex justify-content-between">
+                    <div v-if="contactClicked !== undefined" class="user d-flex justify-content-between">
 
-                        <div v-if="contactClicked !== undefined" class="d-flex">
-
+                        <div>
                             <img :src="'img/avatar' + contacts[contactClicked].avatar + '.jpg'" class=" rounded-circle">
-                            <span>{{contacts[contactClicked].name}}</span> <br>
-
+                            <span>{{contacts[contactClicked].name}}</span>
                         </div>
 
                         <div>
@@ -122,14 +123,15 @@
                     <div v-if="contactClicked !== undefined" id="chat" class="d-flex flex-column">
 
                         <div v-for="message in contacts[contactClicked].messages"
-                            :class="[typeOfMessage(message.status),'message']">
+                            :class="[typeOfMessage(message.status), 'message']">
                             {{message.message}}
                         </div>
                     </div>
+                    <div v-else id="chat"></div>
                     <!-- fine chat con contatto selezionato-->
 
                     <!-- Inizio invio messaggio -->
-                    <div class="send-message d-flex text-center">
+                    <div class="box-send-message d-flex text-center">
 
                         <div class="col-2">
 
@@ -155,7 +157,7 @@
                 </div>
 
             </div>
-            <!-- fine chat box right -->
+            <!-- fine box right -->
 
         </div>
 

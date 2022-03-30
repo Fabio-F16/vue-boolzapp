@@ -11,22 +11,25 @@ body{
     
 } */
 
-/* div{
-    border: 1px solid black;
-} */
 
-.box-left img, .box-right img{
-    width: 50px;
-
-}
 
 .box-left, .box-right{
-   height: 100vh;
+    height: 100vh;
+ }
+ 
+.box-left img, .box-right img{
+    width: 50px;
 }
 
-.user, .send-message{
-    line-height: 50px;
-    vertical-align: middle;
+.user i, .box-send-message i{
+    color: #b1b1b1;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.user, .box-send-message{
+   
+    align-items: center;
     background-color:#eaeaea;
 }
 
@@ -38,6 +41,7 @@ body{
 }
 
 .notify i{
+    color: #8edafc;
     font-size:1.3rem;
     background-color: #f2fbff;
     padding: 0px 10px;
@@ -45,32 +49,44 @@ body{
     vertical-align: middle;
 }
 
+.notify a{
+    font-size: 0.8rem;
+    color: black;
+}
+
+.search-input{
+    margin: 10px 0px;
+}
 #contactsList span{
     font-size: 0.7rem;
 }
 #contactsList{
     overflow-y: scroll;
-    
 }
 
 .contact{
     padding: 10px;
-    border-bottom: 1px solid lightgrey;
+    border-top: 1px solid lightgrey;
 }
 
 .contact img{
     margin-right: 15px;
 }
 
-.box-right{
-    background-image: url(../img/mine.jpg);
+.active{
+    background-color: #eaeaea;
 }
 
-.send-message{
-    position: relative;
-    top:580px;
-    
+.box-right{
+    background-image: url(../img/mine.jpg);
+
 }
+
+#chat{
+    flex-grow: 1;
+}
+
+
 .message{
     width: 200px;
     padding: 15px;
@@ -87,5 +103,9 @@ body{
 .received{
     align-self: flex-start;
     background-color: #ffffff;
+}
+
+.input-message{
+    margin: 10px;
 }
 
