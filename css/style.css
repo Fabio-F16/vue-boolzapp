@@ -3,7 +3,9 @@
     padding: 0px;
     box-sizing: border-box;
 }
-
+body{
+    font-family: 'Roboto', sans-serif;
+}
 [class*="col"]{
     border: 1px solid black;
     
@@ -18,9 +20,9 @@
 
 }
 
-.box-left{
+/* .box-left{
     padding: 10px;
-}
+} */
 
 .user{
     line-height: 50px;
@@ -46,8 +48,15 @@
 #contactsList span{
     font-size: 0.7rem;
 }
+#contactsList{
+    overflow-y: scroll;
+}
 
 .contact{
     padding: 10px;
     border-bottom: 1px solid lightgrey;
+}
+
+.contact img{
+    margin-right: 15px;
 }
