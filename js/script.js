@@ -9,6 +9,9 @@ const app = new Vue({
         contacts,
         contactClicked: undefined,
         newMessage: '',
+        search: '',
+        array: ['']
+
 
     },
     methods: {
@@ -54,7 +57,13 @@ const app = new Vue({
                 this.contacts[this.contactClicked].messages.push(newMessageReceived);
 
             }, 1000)
+        },
+
+        contactSearch() {
+            this.contacts.forEach(element => {
+                const nomi = element.name.toLowerCase();
+                element.visible = nomi.includes(this.search);
+            });
         }
     }
-
 })
