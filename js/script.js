@@ -63,7 +63,7 @@ const app = new Vue({
             this.contacts.forEach(element => {
                 const nomi = element.name.toLowerCase();
                 element.visible = nomi.includes(this.search);
-            });
+            })
         }
     }
 })
