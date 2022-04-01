@@ -1,11 +1,13 @@
-*{
+* {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
 }
-body{
+
+body {
     font-family: 'Roboto', sans-serif;
 }
+
 /* [class*="col"]{
     border: 1px solid black;
     
@@ -13,84 +15,93 @@ body{
 
 
 
-.box-left, .box-right{
+.box-left,
+.box-right {
     height: 100vh;
- }
- 
-.box-left img, .box-right img{
+
+}
+
+.box-left img,
+.box-right img {
     width: 50px;
 }
 
-.user i, .box-send-message i{
+.user i,
+.box-send-message i {
     color: #b1b1b1;
     margin-left: 10px;
     cursor: pointer;
-    font-size:1.3rem;
+    font-size: 1.3rem;
 }
 
-.user, .box-send-message{
-   
+.user,
+.box-send-message {
+
     align-items: center;
-    background-color:#eaeaea;
+    background-color: #eaeaea;
 }
 
-.notify{
+.notify {
     background-color: #8edafc;
 }
-.user, .notify{
+
+.user,
+.notify {
     padding: 10px;
 }
 
-.notify i{
+.notify i {
     color: #8edafc;
-    font-size:1.3rem;
+    font-size: 1.3rem;
     background-color: #f2fbff;
     padding: 0px 10px;
     line-height: 50px;
     vertical-align: middle;
 }
 
-.notify a{
+.notify a {
     font-size: 0.8rem;
     color: black;
 }
 
-.search-input{
+.search-input {
     margin: 10px 0px;
 }
-#contactsList span{
+
+#contactsList span {
     font-size: 0.7rem;
 }
-#contactsList{
+
+#contactsList {
     overflow-y: scroll;
 }
 
-.contact{
+.contact {
     padding: 10px;
     border-top: 1px solid lightgrey;
 }
 
-.contact img{
+.contact img {
     margin-right: 15px;
     cursor: pointer;
 }
 
-.active{
+.active {
     background-color: #eaeaea;
 }
 
-.box-right{
+.box-right {
     background-image: url(../img/mine.jpg);
 
 }
 
-#chat{
+#chat {
     flex-grow: 1;
     overflow-y: scroll;
 }
 
 
-.message{
+.message {
     width: 200px;
     padding: 15px;
     border-radius: 10px;
@@ -98,17 +109,16 @@ body{
 }
 
 
-.send{
+.send {
     align-self: flex-end;
     background-color: #d5f9ba;
 }
 
-.received{
+.received {
     align-self: flex-start;
     background-color: #ffffff;
 }
 
-.input-message{
+.input-message {
     margin: 10px;
 }
-

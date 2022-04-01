@@ -17,7 +17,26 @@ const app = new Vue({
     methods: {
 
         getImgAvatar(valore) {
-            return 'img/avatar' + valore + '.jpg'
+            return 'img/avatar' + valore + '.jpg';
+        },
+
+        getLastMessage(contact) {
+
+            const messages = contact.messages;
+            if (messages.length > 0) {
+                return messages[messages.length - 1].message;
+            } else {
+                return '';
+            }
+            // const messages = contact.messages;
+            // const lastMessage = [messages.length - 1].message;
+            // console.log(lastMessage)
+            // return lastMessage
+
+            // const messages = contact.messages;
+            // const lastMessage = (messages.length > 0) ? messages[messages.length - 1].message : '';
+            // console.log(lastMessage);
+            // return lastMessage;
         },
 
         setContactClicked(i) {
