@@ -81,7 +81,7 @@ const app = new Vue({
         contactSearch() {
             this.contacts.forEach(element => {
                 const nomi = element.name.toLowerCase();
-                element.visible = nomi.includes(this.search);
+                element.visible = nomi.includes(this.search.toLowerCase());
             })
         }
     }
